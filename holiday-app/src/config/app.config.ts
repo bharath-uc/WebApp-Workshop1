@@ -21,7 +21,7 @@ class APP {
     }
 
     private parserConfig() {
-        this.app.use(bodyParser.urlencoded({ extended: true }));
+        this.app.use(express.json());
     }
 
     private routerConfig() {

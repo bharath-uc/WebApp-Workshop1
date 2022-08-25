@@ -1,0 +1,6 @@
+curl -X POST 'http://localhost:3000/country-holiday' --header 'Content-Type: application/json' --data-raw '{"countryCode":"AT", "year":2017}'
+
+INSERT INTO country(country_code, holiday_year) VALUES('AT','2017') ON CONFLICT ON CONSTRAINT uq_year_code_together DO NOTHING RETURNING id;
+
+INSERT INTO holiday (country_id, holiday_date, local_name, holiday_name, launch_year) 
+VALUES(1, '2017', 'Neujahr', 'New Years Day', 2017);
